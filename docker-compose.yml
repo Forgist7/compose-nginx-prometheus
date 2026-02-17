@@ -9,6 +9,9 @@ services:
         condition: service_healthy
     ports:
       - "8000:8000"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
     networks:
       - app_net
 
@@ -20,6 +23,8 @@ services:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+    security_opt:
+      - no-new-privileges:true
     networks:
       - app_net
     healthcheck:
