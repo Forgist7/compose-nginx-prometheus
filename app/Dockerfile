@@ -20,4 +20,4 @@ RUN chown -R appu:appg /app
 USER appu
 EXPOSE 8000
 #CMD ["python", "./app.py"]
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
