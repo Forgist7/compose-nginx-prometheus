@@ -47,6 +47,8 @@ services:
     ports:
       - "9090:9090"
     restart: always
+    networks:
+      - app_net
 
 volumes:
   db_data:
