@@ -44,8 +44,8 @@ services:
     container_name: prometheus
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
-#    ports:
-#      - "9090:9090"
+    ports:
+      - "127.0.0.1:9090:9090"
     restart: always
     networks:
       - app_net
