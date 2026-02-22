@@ -58,6 +58,9 @@ services:
     image: grafana/grafana:12.2.0-ubuntu
     container_name: grafana
     restart: always
+    environment:
+      - GF_SERVER_ROOT_URL=https://kihon.online/grafana/
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
     ports:
       - "127.0.0.1:3000:3000"
     networks:
