@@ -57,6 +57,9 @@ services:
   grafana:
     image: grafana/grafana:12.2.0-ubuntu
     container_name: grafana
+    command:
+      - '--web.external-url=https://kihon.online/grafana/'
+      - '--web.route-prefix=/'
     restart: always
     ports:
       - "127.0.0.1:3000:3000"
