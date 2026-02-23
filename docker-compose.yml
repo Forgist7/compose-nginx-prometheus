@@ -65,6 +65,19 @@ services:
     networks:
       - app_net
 
+  node_exporter:
+    image: prom/node-exporter:v1.10.2
+    container_name: node_exporter
+    restart: always
+    command:
+      - '--path.rootfs=/host'
+    network_mode: host
+    pid: host
+    volumes:
+      - '/:/host:ro,rslave'
+    ports:
+      - "127.0.0.1:9100:9100"
+
 volumes:
   db_data:
 
